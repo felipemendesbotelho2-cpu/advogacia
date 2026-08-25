@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Douglas Pimentel Advocacia | Direito Trabalhista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0d1b33;
+    --navy:#132a52;
+    --navy-soft:#1c3868;
+    --gold:#b8933f;
+    --gold-light:#d8bd7a;
+    --paper:#f7f4ec;
+    --paper-white:#fffdf8;
+    --ink:#171b24;
+    --ink-soft:#4a5164;
+    --whatsapp:#1f8a4c;
+    --line: rgba(184,147,63,0.28);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  a{text-decoration:none; color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy-deep);
+    border-bottom:1px solid rgba(216,189,122,0.15);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px; max-width:1120px; margin:0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px;
+    color:var(--paper-white);
+  }
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%;
+    border:1.5px solid var(--gold-light);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; font-weight:600; font-size:17px;
+    color:var(--gold-light);
+    flex-shrink:0;
+  }
+  .brand-text{line-height:1.15;}
+  .brand-text .name{font-family:'Fraunces', serif; font-size:17px; font-weight:600;}
+  .brand-text .area{font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-light); opacity:0.9;}
+  nav{display:flex; align-items:center; gap:32px;}
+  nav a{
+    color:rgba(255,255,255,0.72); font-size:14.5px; font-weight:500;
+    transition:color .2s;
+  }
+  nav a:hover{color:var(--gold-light);}
+  .btn-header-wa{
+    background:var(--whatsapp); color:#fff; padding:10px 20px;
+    border-radius:6px; font-size:14px; font-weight:600;
+    display:flex; align-items:center; gap:8px;
+  }
+  .btn-header-wa:hover{background:#1a7743;}
+  .mobile-hide{display:flex;}
+  @media (max-width: 860px){
+    .mobile-hide nav a:not(.btn-header-wa){display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(ellipse 900px 500px at 82% -10%, rgba(184,147,63,0.16), transparent 60%),
+      linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 100%);
+    color:var(--paper-white);
+    padding:88px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image: linear-gradient(rgba(216,189,122,0.05) 1px, transparent 1px);
+    background-size: 100% 44px;
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.05fr 0.85fr; gap:60px;
+    align-items:center; position:relative; z-index:1;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--gold-light); margin-bottom:22px; font-weight:600;
+  }
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--gold-light);}
+  .hero h1{
+    font-size:clamp(32px, 4.4vw, 50px);
+    line-height:1.12;
+    margin-bottom:22px;
+    max-width:640px;
+  }
+  .hero h1 em{
+    font-style:normal; color:var(--gold-light);
+  }
+  .hero p.lead{
+    font-size:17.5px; color:rgba(247,244,236,0.82);
+    max-width:520px; margin-bottom:34px; font-weight:400;
+  }
+  .hero-cta-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-bottom:14px;}
+  .btn-wa{
+    background:var(--whatsapp); color:#fff; padding:16px 28px;
+    border-radius:8px; font-weight:700; font-size:16px;
+    display:inline-flex; align-items:center; gap:11px;
+    box-shadow:0 10px 30px -8px rgba(31,138,76,0.55);
+    transition:transform .18s ease, box-shadow .18s ease;
+    border:none; cursor:pointer;
+  }
+  .btn-wa:hover{transform:translateY(-2px); box-shadow:0 14px 34px -6px rgba(31,138,76,0.65);}
+  .btn-wa svg{width:22px; height:22px; flex-shrink:0;}
+  .hero-micro{font-size:13px; color:rgba(247,244,236,0.55);}
+
+  /* identification card */
+  .pain-card{
+    background:var(--paper-white);
+    border-radius:14px;
+    padding:32px 30px;
+    box-shadow:0 30px 60px -18px rgba(0,0,0,0.45);
+    border:1px solid rgba(184,147,63,0.25);
+    color:var(--ink);
+    position:relative;
+  }
+  .pain-card::before{
+    content:"Isso é com você?";
+    position:absolute; top:-13px; left:28px;
+    background:var(--gold); color:var(--navy-deep);
+    font-family:'Fraunces', serif; font-weight:600; font-size:13px;
+    padding:5px 14px; border-radius:5px;
+    letter-spacing:0.01em;
+  }
+  .pain-list{list-style:none; margin-top:10px;}
+  .pain-list li{
+    display:flex; align-items:flex-start; gap:12px;
+    padding:12px 0; font-size:15px; color:var(--ink-soft);
+    border-bottom:1px solid rgba(23,27,36,0.08);
+  }
+  .pain-list li:last-child{border-bottom:none;}
+  .pain-list svg{width:18px; height:18px; flex-shrink:0; margin-top:2px; color:var(--gold);}
+  .pain-list strong{color:var(--ink); font-weight:600;}
+
+  /* ---------- FEELING SECTION (empathy bridge) ---------- */
+  .empathy{
+    background:var(--paper-white);
+    padding:80px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .empathy .wrap{max-width:760px; text-align:center;}
+  .empathy .kicker{
+    font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--gold); font-weight:700; margin-bottom:18px;
+  }
+  .empathy h2{
+    font-size:clamp(24px, 3vw, 32px); line-height:1.35; color:var(--navy);
+    margin-bottom:20px;
+  }
+  .empathy p{font-size:16.5px; color:var(--ink-soft); max-width:600px; margin:0 auto;}
+
+  /* ---------- SERVICES ---------- */
+  .services{padding:88px 0; background:var(--paper);}
+  .section-head{max-width:560px; margin-bottom:52px;}
+  .section-head .kicker{
+    font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--gold); font-weight:700; margin-bottom:14px;
+  }
+  .section-head h2{font-size:clamp(26px,3vw,34px); color:var(--navy);}
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden;
+  }
+  .service-card{background:var(--paper-white); padding:34px 28px;}
+  .service-card .num{
+    font-family:'Fraunces', serif; font-size:13px; color:var(--gold);
+    font-weight:600; margin-bottom:16px; display:block;
+  }
+  .service-card h3{font-size:19px; color:var(--navy); margin-bottom:10px;}
+  .service-card p{font-size:14.5px; color:var(--ink-soft);}
+
+  /* ---------- ABOUT ---------- */
+  .about{padding:100px 0 90px; background:var(--navy-deep); color:var(--paper-white); position:relative; overflow:hidden;}
+  .about::before{
+    content:"";
+    position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:900px; height:900px;
+    background:radial-gradient(circle, rgba(184,147,63,0.10), transparent 65%);
+    pointer-events:none;
+  }
+  .about-grid{display:grid; grid-template-columns:0.75fr 1.25fr; gap:64px; align-items:center; position:relative; z-index:1;}
+
+  .portrait-frame{
+    position:relative;
+    max-width:300px; margin:0 auto;
+  }
+  .portrait-frame .laurel{
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:120%; height:120%;
+    color:var(--gold);
+    opacity:0.9;
+    pointer-events:none;
+  }
+  .about-photo{
+    aspect-ratio:4/5; border-radius:8px;
+    background:linear-gradient(160deg, var(--navy-soft), var(--navy-deep));
+    border:2px solid var(--gold);
+    outline:1px solid rgba(216,189,122,0.35);
+    outline-offset:5px;
+    display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
+  }
+  .about-photo img{
+    width:100%; height:100%; object-fit:cover; object-position:center 15%;
+    display:block;
+  }
+  .about-photo .initials{
+    font-family:'Fraunces', serif; font-size:96px; font-weight:600;
+    color:rgba(216,189,122,0.28);
+  }
+  .grad-seal{
+    position:absolute; bottom:-22px; right:-22px;
+    width:78px; height:78px; border-radius:50%;
+    background:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px -6px rgba(0,0,0,0.5);
+    border:3px solid var(--navy-deep);
+    z-index:2;
+  }
+  .grad-seal svg{width:38px; height:38px; color:var(--navy-deep);}
+
+  .about-text .kicker{
+    font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--gold-light); font-weight:700; margin-bottom:16px;
+    display:flex; align-items:center; gap:9px;
+  }
+  .about-text .kicker svg{width:16px; height:16px;}
+  .about-text h2{font-size:clamp(24px,3vw,32px); margin-bottom:20px;}
+  .about-text p{color:rgba(247,244,236,0.78); font-size:16px; margin-bottom:16px; max-width:560px;}
+  .credentials{display:flex; flex-wrap:wrap; gap:12px; margin-top:20px;}
+  .oab{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13.5px;
+    color:var(--gold-light); border:1px solid rgba(216,189,122,0.35);
+    padding:9px 16px; border-radius:6px;
+    background:rgba(216,189,122,0.05);
+  }
+  .oab svg{width:15px; height:15px; flex-shrink:0;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    background:linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    padding:64px 0; text-align:center;
+  }
+  .final-cta h2{font-size:clamp(24px,3.4vw,32px); color:var(--navy-deep); margin-bottom:14px;}
+  .final-cta p{color:rgba(13,27,51,0.75); font-size:16px; margin-bottom:30px;}
+  .btn-wa-dark{
+    background:var(--navy-deep); color:#fff; padding:16px 30px;
+    border-radius:8px; font-weight:700; font-size:16px;
+    display:inline-flex; align-items:center; gap:11px;
+  }
+  .btn-wa-dark svg{width:20px; height:20px;}
+
+  footer{
+    background:var(--navy-deep); color:rgba(247,244,236,0.55);
+    padding:36px 0; font-size:13.5px; text-align:center;
+    border-top:1px solid rgba(216,189,122,0.12);
+  }
+  footer strong{color:var(--gold-light);}
+
+  /* floating whatsapp button */
+  .float-wa{
+    position:fixed; bottom:24px; right:24px; z-index:60;
+    background:var(--whatsapp); color:#fff; width:58px; height:58px;
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 28px -6px rgba(31,138,76,0.6);
+    animation:pulse 2.4s infinite;
+  }
+  .float-wa svg{width:28px; height:28px;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(31,138,76,0.45);}
+    70%{box-shadow:0 0 0 14px rgba(31,138,76,0);}
+    100%{box-shadow:0 0 0 0 rgba(31,138,76,0);}
+  }
+
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr; gap:44px;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-photo{max-width:280px; margin:0 auto;}
+    .services-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner mobile-hide">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 3L1 8l11 5 9-4.09V17h2V8L12 3zm0 8.83L4.8 8.5 12 5.17 19.2 8.5 12 11.83zM5 13.18v3.82c0 1.66 3.13 3 7 3s7-1.34 7-3v-3.82l-7 3.18-7-3.18z"/></svg>
+      </div>
+      <div class="brand-text">
+        <div class="name">Douglas Pimentel</div>
+        <div class="area">Advocacia Trabalhista</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#servicos">Áreas de atuação</a>
+      <a href="#sobre">Sobre</a>
+      <a href="https://wa.me/5563992024803" class="btn-header-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.52-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.28-.12.56.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.2.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.17 1.35z"/></svg>
+        WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Direito Trabalhista</div>
+      <h1>Seu trabalho tem valor. <em>A lei está do seu lado</em> — e você não precisa lutar por ela sozinho.</h1>
+      <p class="lead">Salário atrasado, hora extra que nunca é paga, uma demissão que veio sem explicação. Você sente que algo está errado — e provavelmente está certo. Fale agora com quem entende do assunto.</p>
+      <div class="hero-cta-row">
+        <a href="https://wa.me/5563992024803?text=Ol%C3%A1%2C%20Dr.%20Douglas!%20Preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20uma%20quest%C3%A3o%20trabalhista." class="btn-wa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.52-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.28-.12.56.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.2.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.17 1.35z"/></svg>
+          Falar agora no WhatsApp
+        </a>
+      </div>
+      <div class="hero-micro">Atendimento rápido e confidencial · Resposta no mesmo dia</div>
+    </div>
+
+    <div class="pain-card">
+      <ul class="pain-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span><strong>Salário atrasado</strong> ou pago errado há meses</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span><strong>Hora extra</strong> que você faz e nunca recebe</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span><strong>Demissão</strong> sem justa causa ou explicação clara</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span><strong>FGTS não depositado</strong> corretamente</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span><strong>Assédio moral</strong> no ambiente de trabalho</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="empathy">
+  <div class="wrap">
+    <div class="kicker">Você não está exagerando</div>
+    <h2>Se algo no seu trabalho parece injusto, o problema não é você — é a situação. E ela tem solução.</h2>
+    <p>Muita gente convive anos com um direito que deveria ter recebido, achando que reclamar vai complicar tudo. Na prática, é o oposto: quanto antes você entende a sua situação, mais fácil é resolvê-la. O primeiro passo é simples — uma conversa, sem compromisso.</p>
+  </div>
+</section>
+
+<section class="services" id="servicos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Áreas de atuação</div>
+      <h2>Onde posso te ajudar</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="num">01</span>
+        <h3>Rescisão e demissão</h3>
+        <p>Análise de verbas rescisórias, demissão sem justa causa, pedido de demissão forçado e acordos indevidos.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">02</span>
+        <h3>Salário e horas extras</h3>
+        <p>Cobrança de valores atrasados, horas extras não pagas, banco de horas irregular e descontos indevidos.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">03</span>
+        <h3>Assédio e ambiente de trabalho</h3>
+        <p>Assédio moral, assédio sexual, condições inadequadas e situações de constrangimento no trabalho.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">04</span>
+        <h3>FGTS e benefícios</h3>
+        <p>Regularização de FGTS não depositado, INSS, vale-transporte, vale-alimentação e demais benefícios.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">05</span>
+        <h3>Acidente de trabalho</h3>
+        <p>Orientação sobre estabilidade, afastamento pelo INSS e indenizações em caso de acidente ou doença ocupacional.</p>
+      </div>
+      <div class="service-card">
+        <span class="num">06</span>
+        <h3>Consultoria trabalhista</h3>
+        <p>Segunda opinião sobre acordos propostos pela empresa antes de qualquer assinatura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="portrait-frame">
+      <svg class="laurel" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g opacity="0.55" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round">
+          <path d="M14 100 C14 60, 30 30, 55 15"/>
+          <path d="M20 108 C16 88, 22 66, 34 48"/><path d="M20 108 L34 100"/>
+          <path d="M17 92 C15 76, 20 60, 30 46"/><path d="M17 92 L29 86"/>
+          <path d="M16 74 C17 62, 24 50, 34 40"/><path d="M16 74 L27 70"/>
+          <path d="M18 58 C22 48, 30 40, 40 33"/><path d="M18 58 L28 56"/>
+          <path d="M24 44 C30 36, 38 30, 47 25"/><path d="M24 44 L33 42"/>
+          <path d="M186 100 C186 60, 170 30, 145 15"/>
+          <path d="M180 108 C184 88, 178 66, 166 48"/><path d="M180 108 L166 100"/>
+          <path d="M183 92 C185 76, 180 60, 170 46"/><path d="M183 92 L171 86"/>
+          <path d="M184 74 C183 62, 176 50, 166 40"/><path d="M184 74 L173 70"/>
+          <path d="M182 58 C178 48, 170 40, 160 33"/><path d="M182 58 L172 56"/>
+          <path d="M176 44 C170 36, 162 30, 153 25"/><path d="M176 44 L167 42"/>
+        </g>
+      </svg>
+      <div class="about-photo">
+        <img src="data:image/jpeg;base64,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" alt="Dr. Douglas Pimentel, advogado trabalhista">
+      </div>
+      <div class="grad-seal">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 8l11 5 9-4.09V17h2V8L12 3zm0 8.83L4.8 8.5 12 5.17 19.2 8.5 12 11.83zM5 13.18v3.82c0 1.66 3.13 3 7 3s7-1.34 7-3v-3.82l-7 3.18-7-3.18z"/></svg>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="kicker">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 8l11 5 9-4.09V17h2V8L12 3zm0 8.83L4.8 8.5 12 5.17 19.2 8.5 12 11.83zM5 13.18v3.82c0 1.66 3.13 3 7 3s7-1.34 7-3v-3.82l-7 3.18-7-3.18z"/></svg>
+        Sobre o advogado
+      </div>
+      <h2>Dr. Douglas Pimentel</h2>
+      <p>Atuo há anos defendendo trabalhadores que tiveram seus direitos desrespeitados — do pequeno atraso de salário aos casos mais graves de assédio e demissão irregular. Cada caso é ouvido com atenção, porque por trás de cada processo existe uma história e uma preocupação real.</p>
+      <p>Meu compromisso é traduzir a lei trabalhista em algo simples de entender, e conduzir o processo com transparência do início ao fim.</p>
+      <div class="credentials">
+        <span class="oab">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 8l11 5 9-4.09V17h2V8L12 3zm0 8.83L4.8 8.5 12 5.17 19.2 8.5 12 11.83zM5 13.18v3.82c0 1.66 3.13 3 7 3s7-1.34 7-3v-3.82l-7 3.18-7-3.18z"/></svg>
+          OAB/TO — Advocacia Trabalhista
+        </span>
+        <span class="oab">Bacharel em Direito</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Sua situação merece uma resposta clara.</h2>
+    <p>Envie uma mensagem agora e receba orientação sobre o seu caso.</p>
+    <a href="https://wa.me/5563992024803?text=Ol%C3%A1%2C%20Dr.%20Douglas!%20Preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20uma%20quest%C3%A3o%20trabalhista." class="btn-wa-dark" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.52-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.28-.12.56.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.2.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.17 1.35z"/></svg>
+      Falar no WhatsApp agora
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Douglas Pimentel Advocacia</strong> — Direito Trabalhista · Palmas/TO<br>
+    WhatsApp: (63) 99202-4803
+  </div>
+</footer>
+
+<a href="https://wa.me/5563992024803" class="float-wa" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.52-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.28-.12.56.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.2.71-.83.9-1.11.19-.28.38-.23.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.17 1.35z"/></svg>
+</a>
+
+</body>
+</html>
